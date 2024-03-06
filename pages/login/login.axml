@@ -1,0 +1,25 @@
+<view class="page">
+  <form onSubmit="onSubmit" onReset="onReset">
+    <view class="page-section">
+      <view class="form-row">
+        <view class="form-row-label"><label for="controlled">用户名</label></view>
+        <view class="form-row-content">
+          <input class="input" id="controlled" onInput="inputUserName" placeholder="用户名输入框" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="form-row">
+        <view class="form-row-label">密码</view>
+        <view class="form-row-content ">
+          <input onInput="inputPassword" class="input" password type="text" placeholder="密码输入框" />
+        </view>
+      </view>
+    </view>
+    <view>
+      <button form-type="submit" type="primary">submit</button>
+    </view>
+  </form>
+</view>
+
+

@@ -1,0 +1,13 @@
+<view>
+  <button size="default" type="primary" onTap="search">search</button>
+</view>
+<view>
+  <scroll-view class="scroll" scroll-y="{{true}}" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll">
+    <view a:for="{{ list }}" class="scan-item" onTap="connect" data-item={{item}}>
+      <view>name:{{item.deviceName}}</view>
+      <view>sn:{{item.sn}}</view>
+      <view>MAC:{{item.mac}}</view>
+      <view>RSSI:{{item.RSSI}}</view>
+    </view>
+  </scroll-view>
+  </view>

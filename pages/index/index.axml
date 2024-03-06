@@ -1,0 +1,62 @@
+
+<view class="device">
+  <view>
+    SN:{{deviceInfo.sn}}
+    MAC:{{deviceInfo.mac}}
+  </view>
+  <view>
+    hwVer:{{deviceInfo.hwVer}}
+    fwVer:{{deviceInfo.fwVer}}
+    blVer:{{deviceInfo.blVer}}
+  </view>
+  <view>
+   电量： {{heartBeat.battPercent}}
+  </view>
+  <view a:if="{{ heartBeat.deviceStatus===0 }}">状态：电量正常</view>
+  <view a:if="{{ heartBeat.deviceStatus===1 }}">状态：充电中</view>
+  <view a:if="{{ heartBeat.deviceStatus===2 }}">状态：充满</view>
+  <view a:if="{{ heartBeat.deviceStatus===3 }}">状态：低电</view>
+  <view a:if="{{ heartBeat.deviceStatus===4 }}">状态：异常</view>
+  <view a:if="{{ heartBeat.deviceStatus===5 }}">状态：休眠</view>
+  <view>
+    <view a:if="{{ mode===1 }}">监测中</view>
+    <view a:if="{{ mode===4 }}">实时血氧</view>
+    <view a:if="{{ mode===0 }}">默认</view>
+  </view>
+  <view a:if="{{ mode===1 }}">
+    <view a:if="{{ v2LiveSleep.status==0 }}">实时值有效:0 </view>
+    <view a:if="{{ v2LiveSleep.status==1 }}">值准备中:1 </view>
+    <view a:if="{{ v2LiveSleep.status==2 }}">无效/离手:2</view>
+    pr:{{v2LiveSleep.pr}}
+    spo:{{v2LiveSleep.spo}}
+    duration:{{v2LiveSleep.duration}}
+  </view>
+  <view a:if="{{ mode===4 }}">
+    <view a:if="{{ v2LiveSpoMonitor.status==0 }}">实时值有效:0 </view>
+    <view a:if="{{ v2LiveSpoMonitor.status==1 }}">值准备中:1 </view>
+    <view a:if="{{ v2LiveSpoMonitor.status==2 }}">无效/离手:2</view>
+    pr:{{v2LiveSpoMonitor.pr}}
+    spo:{{v2LiveSpoMonitor.spo}}
+  </view>
+</view>
+<view class="bt-2">
+  <button onTap="openLive" class="bt"  type="primary">开启实时通道</button>
+  <button onTap="closeLive" class="bt"  type="primary">关闭实时通道</button>
+</view>
+
+<view class="bt-2">
+  <button onTap="openSpo2" class="bt"  type="primary">开启实时血氧</button>
+  <button onTap="closeSpo2" class="bt"  type="primary">关闭实时血氧</button>
+</view>
+
+<view class="bt-2">
+  <button onTap="openSleep" class="bt"  type="primary">开启监测</button>
+  <button onTap="closeSleep" class="bt"  type="primary">关闭监测</button>
+</view>
+
+<view class="bt-2">
+  <button onTap="slowGetReport" class="bt"  type="primary">慢速收取</button>
+  <button onTap="quickGetReport" class="bt"  type="primary">快速收取</button>
+</view>
+
+

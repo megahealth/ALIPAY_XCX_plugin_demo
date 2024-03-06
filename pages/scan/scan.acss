@@ -1,0 +1,12 @@
+.scroll{
+  padding-top: 20px;
+  height: 800px;
+}
+.scan-item{
+  margin: 5px 10px;
+  border: 1px solid ;
+  border-radius: 5px;
+}
+.scan-item view{
+  padding: 5px;
+}
