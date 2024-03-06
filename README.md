@@ -1,0 +1,2 @@
+# ALIPAY_XCX_plugin_demo
+支付宝原生小程序使用插件的demo
